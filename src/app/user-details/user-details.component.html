@@ -1,0 +1,112 @@
+<div class="card login-card col-lg-5 mx-auto">
+
+    <div class="card-body">
+        <div class="container row">
+            <div>
+                <div *ngIf=retrievedImage
+                    style="border-radius: 50% ;height: 120px; width: 120px;margin: 20px auto 10px;">
+                    <img src="data:image/jpeg;base64,{{retrievedImage}}">
+                </div>
+            </div>
+            <div>
+                <div *ngIf=!retrievedImage
+                    style="border-radius: 50% ;height: 120px; width: 120px;margin: 20px auto 10px;">
+                    <img src="assets/images/user.jpg">
+                </div>
+            </div>
+        </div>
+        <!-- <div
+            style="border-radius: 50% ;height: 120px; width: 120px;margin: 20px auto 10px; background-color: aliceblue;">
+            <img [src]="userDp" alt="">
+        </div> -->
+        <div style="text-align: center;">
+            <button class="btn btn-link" (click)="enableUpload()" style="color: #FBC10A;" type="button">
+                Change
+            </button>
+            <div *ngIf="canUpload">
+                <input type="file" style="background-color: white; border: 1px solid white;" (change)="onFileChanged($event)" />
+                <button class="btn btn-warning" (click)="updateImage()">Upload</button>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-between;">   
+            <button class="btn btn-link" (click)="enableEdit()" style="color: #FBC10A;">
+                <mat-icon style="font-size: 17px;">edit</mat-icon>Edit profile
+            </button>
+            <button class="btn btn-link"  (click)="deleteAccount()" style="color: #FBC10A;">Delete Account</button>
+        </div>
+        <form [formGroup]="registerForm">
+            <div class="row">
+                <!-- First Name -->
+                <div class="col-md-6 mb-3">
+                    <div class="form-floating mb-2" style="position: relative;">
+                        <input [readonly]="disableEdit" type="text" formControlName="firstName" class=" editable form-control"
+                            id="floatingFNAME" style="border: 0;" placeholder="name">
+                        <label id="floatingFNAMEID" for="floatingFNAME" style="color: white;">First Name</label>
+                    </div>
+                    <!-- validation -->
+                    <div class="error" *ngIf="firstName.touched && firstName.errors?.required">
+                        first name is required
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <!-- Last Name -->
+                    <div class="form-floating mb-2 " style="position: relative;">
+                        <input type="text" formControlName="lastName" class="form-control editable" id="floatingLNAME"
+                            style="border: 0;" placeholder="name" [readonly]="disableEdit">
+                        <label id="floatingLNAMEID" for="floatingLNAME" style="color: white;">Last Name</label>
+                    </div>
+                    <!-- validation -->
+                    <div class="error" *ngIf="lastName.touched && lastName.errors?.required">
+                        last name is required
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-floating mb-3" style="position: relative;">
+                <input type="email" formControlName="email" class="form-control" id="floatingInput" style="border: 0;"
+                    placeholder="name@example.com" [readonly]="true">
+                <label for="floatingInput" style="color: white;">Email address</label>
+            </div>
+            <!-- phone input -->
+            <div class="form-floating mb-3 " style="position: relative;">
+                <input type="tel" formControlName="mobileNo" class="form-control editable" id="floatingPhone" style="border: 0;"
+                    placeholder="+91 99999 99999" [readonly]="disableEdit">
+                <label id="floatingPhoneID" for="floatingPhone" style="color: white;">Phone Number</label>
+                <!-- validation -->
+                <div class="error" *ngIf="mobileNo.touched && mobileNo.errors?.required">
+                    phone number is required
+                </div>
+            </div>
+
+
+            <div class="col-md-12 mb-3">
+                <!-- Password input -->
+                <div class="form-floating">
+                    <input type="password" formControlName="password" class="form-control editable" style="border: 0;"
+                        id="floatingPassword" placeholder="name@example.com" [readonly]="disableEdit">
+                    <label id="floatingPasswordID" for="floatingPassword" style="color: white;">Password</label>
+                </div>
+                <!-- validation -->
+                <div class="error" *ngIf="password.touched && password.errors?.required">
+                    password is required
+                </div>
+                <div class="error" *ngIf="password.touched && password.errors?.minlength">
+                    password should contain atleast 8 characters
+                </div>
+            </div>
+
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4" *ngIf="!disableEdit">
+                <div class="col d-flex justify-content-center">
+                </div>
+
+                <!-- Submit button -->
+                <button type="button" class="btn btn-warning btn-block mb-4" (click)="update()"
+                    style="width: 100%;">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

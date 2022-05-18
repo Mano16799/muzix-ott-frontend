@@ -1,0 +1,49 @@
+#floatingInput{
+    background: #3B3B3B;
+    color: white;
+}
+#floatingPassword{
+    background: #3B3B3B;
+    color: white;
+}
+
+.login-card{
+    /* opacity: 35%; */
+    padding: 15px;
+    background: rgba(37, 34, 34, 0.4);
+    margin: 10% auto; 
+    width: 60%;
+}
+
+.tag-line{
+   font-family: 'Open sans', sans-serif;
+   font-size: 35px;
+   font-weight: bolder;
+}
+
+.register{
+    text-decoration: none;
+    color: #FBC10A;
+}
+.error{
+    color: red;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 768px){
+    .login-card
+    {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 576px) {
+    .login-card
+    {
+        width: 90%;
+        padding-top: 100px;
+    }
+
+    .text{
+        font-size: 20px;
+    }
+}

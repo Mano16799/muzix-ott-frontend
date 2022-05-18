@@ -1,0 +1,27 @@
+<div class="carousel-movies">
+    <app-movie-carousel></app-movie-carousel>
+</div>
+<div *ngIf="isLoggedIn" class="recommendations">
+    <h3 class="movies-head">Recommended movies</h3>
+    <app-recommendations></app-recommendations>
+    <h3 class="movies-head">All movies</h3>
+</div>
+
+<div style="width: 95%; margin: auto;">
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-4 gy-4 movie-card"
+            *ngFor="let movie of allMovies$ | async | paginate: { itemsPerPage: 30, currentPage: p }">
+            <div class="card zoom" style=" border: none;" (mouseenter)="openPreview($event)"
+                (mouseleave)="closePreview($event)">
+                <!-- <h1 class="original">M</h1> -->
+                <a routerLink="/home/movie/{{movie._id}}"><img
+                        src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}" class="card-img-top"
+                        alt="..."></a>
+                <div class="preview" id="previewDiv{{movie._id}}">
+                    {{movie.overview}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
+</div>

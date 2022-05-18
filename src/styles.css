@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'NetflixSans', sans-serif !important;
+    background-color: #212529;
+}
+
+@font-face {
+    font-family: 'NetflixSans';
+    src: url("assets\fonts\NetflixSans-Light.otf")format('opentype');
+    
+}
+
+@font-face {
+    font-family: 'NetflixSans';
+    src: url("assets\fonts\NetflixSans-Bold.otf")format('opentype');
+}
+
+@font-face {
+    font-family: 'NetflixSans';
+    src: url("assets\fonts\NetflixSans-Medium.otf")format('opentype');
+}
+
+@font-face {
+    font-family: 'NetflixSans';
+    src: url("assets\fonts\NetflixSans-Regular.otf")format('opentype');
+}

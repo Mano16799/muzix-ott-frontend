@@ -1,0 +1,57 @@
+<div class="card login-card">
+    <div>
+        <h1 class="tag-line">See What's Next</h1>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="loginForm">
+            <!-- Email input -->
+            <div class="form-floating mb-2">
+                <input type="email" formControlName="email" class="form-control text" id="floatingInput"
+                    style="border: 0;" placeholder="name@example.com">
+                <label for="floatingInput" class="text" style="color: white;">Email*</label>
+            </div>
+
+            <!-- validation -->
+            <div class="mb-2 error" *ngIf="email.touched && email.errors?.required">
+                email is required
+            </div>
+            <!-- validation -->
+            <div class="mb-2 error" *ngIf="email.touched && email.errors?.email">
+                email should be in proper format
+            </div>
+
+            <!-- Password input -->
+            <div class="form-floating mb-2">
+                <input type="password" formControlName="password" class="form-control text" id="floatingPassword"
+                    style="border: 0;" placeholder="name@example.com">
+                <label for="floatingPassword" class="text" style="color: white;">Password*</label>
+            </div>
+
+            <!-- validation -->
+            <div class="mb-2 error" *ngIf="password.touched && password.errors?.required">
+                password is required
+            </div>
+
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+                <div class="col d-flex justify-content-center">
+
+                </div>
+
+                <!-- Submit button -->
+                <div class="mb-4">
+                    <button [disabled]="!loginForm.valid" id="loginBtn" #loginBtn type="submit" (click)="login()"
+                        class="text btn btn-warning btn-block " style="width: 100%;">Sign in</button>
+                    <div style="color: white;font-size: 12px;" class="mb-2 mt-2 " *ngIf="loginBtn.disabled">
+                        Enter the values for required fields*
+                    </div>
+                </div>
+
+                <!-- Register buttons -->
+                <div class="text-center ">
+                    <p class="text">Not a member? <a routerLink="/auth/register" class="register">Register</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

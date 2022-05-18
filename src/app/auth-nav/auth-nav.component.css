@@ -1,0 +1,43 @@
+.outlet {
+    width: 60%;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.background {
+    position: absolute;
+}
+
+.background-img {
+    height: 700px;
+    width: 100vw;
+    filter: brightness(0.5);
+}
+
+@media screen and (max-width: 768px) {
+    .outlet {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .outlet {
+        width: 90%;
+    }
+
+    .background-img {
+        object-fit: cover;
+        filter: brightness(0.5);
+    }
+
+    .navbar-brand{
+        text-align: center;
+    }
+    .container-fluid{
+        display: flex;
+        justify-content: center;
+    }
+    .navbar-brand img{
+        height: 40px;
+    }
+}

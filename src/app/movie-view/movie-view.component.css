@@ -1,0 +1,47 @@
+iframe {
+    width: 1200px;
+}
+
+.desc {
+    position: absolute;
+    top: 25%;
+    left: 150px;
+    padding-right: 40%;
+}
+
+.backdrop {
+    width: 100%;
+    height: 700px;
+    filter: brightness(40%);
+}
+
+.genre-chip {
+    padding: 4px 7px;
+    margin: 5px 5px 20px;
+    background: rgba(105, 99, 99, 0.4);
+    border-radius: 15%;
+}
+
+.movie-desc {
+    font-family: 'roboto', sans-serif;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 25px;
+}
+
+.fav-btn {
+    border: 1px solid whitesmoke;
+    border-radius: 15%;
+    color: whitesmoke;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.title {
+    font-size: 38px;
+    margin-bottom: 15px;
+    font-weight:500
+}
+
+.swal{
+    background-color: red;
+}

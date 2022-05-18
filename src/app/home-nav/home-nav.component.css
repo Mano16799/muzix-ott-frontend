@@ -1,0 +1,121 @@
+.gold {
+    color: #FBC10A;
+    font-size: 30px;
+    margin: auto 10px;
+}
+.logo-small{
+    display: none;
+}
+.muzix{
+    display: flex;
+    align-items: center;
+}
+#searchArea {
+    background: #3B3B3B;
+    color: white;
+    border: 1px solid rgb(46, 46, 46);
+    width: 400px;
+    height: 40px;
+    margin-left: 280px;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 80px;
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #FBC10A;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav a:hover {
+    color: #F1F1F1;
+    background-color: #3B3B3B;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 80px;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.genre-menu{
+    margin-right: 20px;
+    font-size:30px;
+}
+#outlet{
+    margin-top: 80px;
+}
+@media screen and (max-width: 992px) {
+    #searchArea{
+        width: 300px;
+        margin-left: 150px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+    #searchArea{
+        width: 250px;
+        margin-left: 0;
+    }
+    .settings{
+        margin-bottom: 15px;
+    }
+}
+@media screen and (max-width: 576px) {
+    #searchArea{
+        width: 200px;
+        height: 50px;
+        margin-left: 0;
+    }
+    .genre-menu{
+        margin-right: 20px;
+        font-size:50px;
+    }
+    .logo-small{
+        display: block;
+        margin-left: 20px;
+        height: 40px;
+    }
+    .logo-big{
+        display: none;
+    }
+    .settings{
+        margin-top: 10px;
+        height: 50px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .settings{
+        position: absolute;
+        top: 2px;
+        right: 15px;
+    }
+    #searchArea{
+        width: 75vw;
+        height: 50px;
+        margin-left: 0;
+    }
+    .search-div{
+        margin-top: 20px;
+    }
+    .sidenav a {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+}

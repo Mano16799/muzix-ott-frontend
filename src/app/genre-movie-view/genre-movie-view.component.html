@@ -1,0 +1,20 @@
+<div style="width: 95%; margin: auto;">
+    <h3 style="color: #FBC10A; font-family: 'NetflixSans', sans-serif !important; padding-top: 30px;">
+        selected genre: "{{selectedGenre}}"</h3>
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-4 gy-4 movie-card"
+            *ngFor="let movie of allMovies$ | async | paginate: { itemsPerPage: 30, currentPage: p }">
+            <div class="card zoom" style=" border: none;" (mouseenter)="openPreview($event)"
+                (mouseleave)="closePreview($event)">
+                <!-- <h1 class="original">M</h1> -->
+                <a routerLink="/home/movie/{{movie._id}}"><img
+                        src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}" class="card-img-top"
+                        alt="..."></a>
+                <div class="preview" id="previewDiv{{movie._id}}">
+                    {{movie.overview}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
+</div>

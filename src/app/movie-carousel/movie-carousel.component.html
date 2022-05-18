@@ -1,0 +1,67 @@
+<div id="carouselExampleControls" class="carousel slide " data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item " matRipple>
+            <img style="object-fit: contain;"
+                src="https://image.tmdb.org/t/p/original/{{topRatedMovies[0].backdrop_path}}" class="d-block w-100"
+                alt="..." routerLink="/home/movie/{{topRatedMovies[0]._id}}">
+            <div class="desc">
+                <div style="display: inline-block;" *ngFor="let genre of topRatedMovies[0].genres">
+                    <p class="genre-chip">{{genre.name}}</p>
+                </div>
+                <div class="d-flex" style="align-items: center;">
+                    <h1 class="title">{{topRatedMovies[0].original_title}}</h1>
+
+                </div>
+                <p class="tagline">{{topRatedMovies[0].tagline}}</p>
+            </div>
+        </div>
+        <div class="carousel-item ">
+            <img src="https://image.tmdb.org/t/p/original/{{topRatedMovies[1].backdrop_path}}" class="d-block  w-100"
+                alt="..."  routerLink="/home/movie/{{topRatedMovies[1]._id}}">
+            <div class="desc">
+                <div style="display: inline-block;" *ngFor="let genre of topRatedMovies[1].genres">
+                    <p class="genre-chip">{{genre.name}}</p>
+                </div>
+                <div class="d-flex" style="align-items: center;">
+                    <h1 class="title">{{topRatedMovies[1].original_title}}</h1>
+
+                </div>
+                <p class="tagline">{{topRatedMovies[1].tagline}}</p>
+            </div>
+        </div>
+        <div class="carousel-item active">
+            <img src="https://image.tmdb.org/t/p/original/{{topRatedMovies[2].backdrop_path}}" class="d-block w-100"
+                alt="..."  routerLink="/home/movie/{{topRatedMovies[2 ]._id}}">
+            <div class="desc">
+                <div style="display: inline-block;" *ngFor="let genre of topRatedMovies[2].genres">
+                    <p class="genre-chip">{{genre.name}}</p>
+                </div>
+                <div class="d-flex" style="align-items: center;">
+                    <h1 class="title">{{topRatedMovies[2].original_title}}</h1>
+                </div>
+                <p class="tagline">{{topRatedMovies[2].tagline}}</p>
+            </div>
+        </div>
+        <div class="carousel-item ">
+            <img src="https://image.tmdb.org/t/p/original/{{topRatedMovies[3].backdrop_path}}" class="d-block w-100"
+                alt="..."  routerLink="/home/movie/{{topRatedMovies[3]._id}}">
+            <div class="desc">
+                <div style="display: inline-block;" *ngFor="let genre of topRatedMovies[3].genres">
+                    <p class="genre-chip">{{genre.name}}</p>
+                </div>
+                <div class="d-flex" style="align-items: center;">
+                    <h1 class="title">{{topRatedMovies[3].original_title}}</h1>
+                </div>
+                <p class="tagline">{{topRatedMovies[3].tagline}}</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>

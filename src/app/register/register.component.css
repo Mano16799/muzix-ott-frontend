@@ -1,0 +1,36 @@
+#floatingInput, #floatingFNAME, #floatingLNAME, #floatingPassword, #floatingPhone, #floatingCPassword {
+    background: #3B3B3B;
+    color: white;
+}
+
+.login-card {
+    padding: 15px;
+    background: rgba(37, 34, 34, 0.4);
+    margin: 5% auto;
+    width: 70%;
+}
+
+.tag-line {
+    font-family: 'Open sans', sans-serif;
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+.login {
+    color: #FBC10A;
+}
+
+@media screen and (max-width: 576px) {
+    .login-card {
+        width: 100%;
+    }
+
+    .text {
+        font-size: 20px;
+    }
+}

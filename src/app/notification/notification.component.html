@@ -1,0 +1,16 @@
+<div style="display: flex; justify-content: center;" *ngIf="notifications.length==0">
+    <p style="color: #FBC10A; font-size: 16px;">There is no new notifications</p>
+</div>
+
+<div>
+    <div *ngFor="let notification of notifications">
+        <div class="card" style="background-color: rgb(34, 34, 34); margin:auto 40px 20px;">
+            <div class="d-flex card-body" style="align-items: center;">
+                <img style="height:100px; margin: 20px;"
+                    src="https://image.tmdb.org/t/p/original/{{notification.favourite.poster_path}}" alt="" srcset="">
+                <p style="color: #FBC10A;">Congratulations, You have added {{notification.favourite.title}} to your
+                    favourites list!</p>
+            </div>
+        </div>
+    </div>
+</div>

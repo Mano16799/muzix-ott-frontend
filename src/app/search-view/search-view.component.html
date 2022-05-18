@@ -1,0 +1,27 @@
+<div style="width: 95%; margin: auto;">
+    <div *ngIf="searchRes!=0" style="display: flex;justify-content: space-between;">
+        <p style="color: #FBC10A; font-family: 'NetflixSans', sans-serif !important; padding-top: 30px;">Showing search
+            results
+            for keyword:
+            "{{searchKey}} "</p>
+    </div>
+    <div *ngIf="searchRes==0">
+        <p style="color: #FBC10A;">Oops! No search results found for keyword "{{searchKey}}"</p>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-4 gy-4 movie-card"
+            *ngFor="let movie of searchResults$ | async | paginate: { itemsPerPage: 30, currentPage: p }">
+            <div class="card zoom" style=" border: none;" (mouseenter)="openPreview($event)"
+                (mouseleave)="closePreview($event)">
+                <!-- <h1 class="original">M</h1> -->
+                <a routerLink="/home/movie/{{movie._id}}"><img
+                        src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}" class="card-img-top"
+                        alt="..."></a>
+                <div class="preview" id="previewDiv{{movie._id}}">
+                    {{movie.overview}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
+</div>

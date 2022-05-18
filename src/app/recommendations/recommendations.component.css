@@ -1,0 +1,67 @@
+.zoom {
+    width: 12rem;
+    transition: transform .4s;
+}
+
+.zoom:hover {
+    -ms-transform: scale(1.1);
+    /* IE 9 */
+    -webkit-transform: scale(1.1);
+    /* Safari 3-8 */
+    transform: scale(1.1);
+}
+
+.pagination {
+    color: #FBC10A;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.preview {
+    padding: 10px 15px;
+    display: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color:#212529;
+    height: 155px;
+    overflow: hidden;
+}
+.carousel-movies{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+@media screen and (max-width: 992px) {
+    .zoom{
+        width: 9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .zoom{
+        width: 10rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .carousel-movies{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .zoom{
+        width: 6rem;
+    }
+
+    .row{
+        display: flex;
+    }
+
+    .movie-card{
+        width: 120px;
+    }
+}

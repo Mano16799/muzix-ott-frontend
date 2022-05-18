@@ -1,0 +1,102 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+        <!-- Navbar brand -->
+        <div class="muzix">
+            <span style="font-size:30px;cursor:pointer" (click)="openNav()">
+                <mat-icon class="gold genre-menu" data-bs-toggle="tooltip" data-bs-placement="bottom" title="search">
+                    menu</mat-icon>
+            </span>
+            <a class="navbar-brand" routerLink="/home"><img class="logo-big" src="assets/images/logo.PNG" alt=""
+                    height="30px">
+                <img class="logo-small" src="assets/images/icon.png" alt=""></a>
+        </div>
+        <!-- Search -->
+        <form class="w-auto d-flex search-div">
+            <input #search type="search" id="searchArea" class="form-control" placeholder="Search movies..."
+                aria-label="Search">
+            <button class="btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="search" type="submit">
+                <a routerLink="/home/search/{{search.value}}">
+                    <mat-icon class="gold">search</mat-icon>
+                </a>
+            </button>
+        </form>
+        <!-- Toggle button -->
+        <button class="navbar-toggler settings" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <mat-icon class="gold ">settings</mat-icon>
+        </button>
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            <!-- Icons -->
+            <ul class="navbar-nav d-flex flex-row me-1">
+                <li class="nav-item me-3 me-lg-0 dropdown">
+                    <button id="dropdownMenuButton1" class="nav-link btn btn-link" data-bs-toggle="dropdown">
+                        <div style="display:inline-block;">
+                            <p style="display:inline; font-size: 12px; color:#FBC10A ;
+                            position: relative; bottom: 10px;"
+                                *ngIf="isLoggedIn">HI
+                                {{userName}}</p>
+                            <mat-icon class="gold" data-bs-toggle="tooltip" data-bs-placement="bottom" title="user">
+                               account_circle</mat-icon>
+                        </div>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style=" background-color:black">
+                        <li *ngIf="isLoggedIn"><a class="dropdown-item" routerLink="/home/user"
+                                style="color: #FBC10A;">User Details</a>
+                        </li>
+                        <li (click)="logOut()" *ngIf="isLoggedIn"><a class="dropdown-item" href="#"
+                                style="color: #FBC10A;">Log-out</a></li>
+                        <li *ngIf="!isLoggedIn"><a class="dropdown-item" routerLink="/auth/login"
+                                style="color: #FBC10A;">Login</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item me-3 me-lg-0">
+                    <a class="nav-link" routerLink="/home/favourites" data-bs-toggle="tooltip"
+                        data-bs-placement="bottom" title="favourites">
+                        <mat-icon class="gold">favorite</mat-icon>
+                    </a>
+                </li>
+                <li *ngIf="isLoggedIn" class="nav-item me-3 me-lg-0">
+                    <a class="nav-link" routerLink="/home/notifications" data-bs-toggle="tooltip"
+                        data-bs-placement="bottom" title="notifications">
+                        <span *ngIf="count!=0"
+                            class="position-absolute top-10 end-0 translate-middle badge rounded-pill bg-danger">
+                            {{count}}
+                            <span class="visually-hidden">unread messages</span>
+                        </span>
+                        <mat-icon class="gold">notifications</mat-icon>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <a class="genre-link" routerLink="/home" style="color: white;">Home</a>
+    <a class="genre-link" routerLink="gallery/Action">Action</a>
+    <a class="genre-link" routerLink="gallery/Crime">Crime</a>
+    <a class="genre-link" routerLink="gallery/Thriller">Thriller</a>
+    <a class="genre-link" routerLink="gallery/Drama">Drama</a>
+    <a class="genre-link" routerLink="gallery/Romance">Romance</a>
+    <a class="genre-link" routerLink="gallery/Comedy">Comedy</a>
+    <a class="genre-link" routerLink="gallery/Documentary">Documentary</a>
+    <a class="genre-link" routerLink="gallery/History">History</a>
+    <a class="genre-link" routerLink="gallery/Mystery">Mystery</a>
+    <a class="genre-link" routerLink="gallery/Fantasy">Fantasy</a>
+    <a class="genre-link" routerLink="gallery/Adventure">Adventure</a>
+    <a class="genre-link" routerLink="gallery/Horror">Horror</a>
+    <a class="genre-link" routerLink="gallery/Science Fiction">Science Fiction</a>
+    <a class="genre-link" routerLink="gallery/Family">Family</a>
+    <a class="genre-link" routerLink="gallery/Animation">Animation</a>
+</div>
+<div id="outlet" style="background-color: #212529;">
+    <router-outlet></router-outlet>
+</div>
